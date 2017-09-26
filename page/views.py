@@ -1,5 +1,6 @@
 from django.shortcuts import render,render_to_response
 from .models import *
+from django.contrib.auth import authenticate,login
 from django.http import HttpResponse
 from datetime import datetime
 from . import models
@@ -57,7 +58,19 @@ def view_register(request):
 
 def view_logout(request):
     pass
-def login(request):
+
+def loginAuth(request):
+    user = request.POST.get('user','admin')
+    pas = request.POST.get('pas','haohaoxuexi0')
+    user =authenticate(request,username=user,password=pas)
+    if(user is not None):
+        login(request,user)
+        print(" access ")
+        return HttpResponse("this is right access")
+    else :
+        print("invalid login >>>fiasco")
+        return HttpResponse("this is wrong access")
+def my_login(request):
         user = request.POST.get('user','风吹屁屁凉')
         pas = request.POST.get('pas','wozhua00')
         loginState = request.POST.get('loginState','教师')

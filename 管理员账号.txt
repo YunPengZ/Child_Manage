@@ -1,0 +1,8 @@
+超级管理员：
+	admin adminadmin
+幼儿园管理员
+	一号管理员
+	yihaoguanliyuan
+老师：
+	一号老师
+	yihaolaoshi
