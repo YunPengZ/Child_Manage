@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Primary School Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+{% load staticfiles %}
+    <link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/top_tab.css' %}" rel="stylesheet" type="text/css" />
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"> </script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"> </script>
+<!--webfonts-->
+<link href='http://fonts.useso.com/css?family=Arvo:400,700,400italic|PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
+</head>
+<body>
+	<!--start-home-->
+	<!----- start-header---->
+			<div id="home" class="header two">
+					<div class="top-header two">	
+						<div class="container">
+						<div class="logo">
+							<a  href="{% url 'page:index' %}" ><h1>磬苑<span>幼儿园</span></h1></a>
+						</div>
+					<div class="top-menu">
+							<span class="menu"> </span>
+								<ul class="cl-effect-16" style="overflow: visible">
+								 <li><a class="active" href="{% url 'page:index' %}" data-hover="主页">主页</a></li>
+								<li><a href="{% url 'page:view_about' %}" data-hover="关于">关于</a></li>
+								<li><a href="{% url 'page:view_teacher' %}" data-hover="教师信息">教师信息</a></li>
+								<li><a href="{% url 'page:view_404' %}" data-hover="测试">测试</a></li>
+								<li><a href="{% url 'page:view_contact' %}" data-hover="联系我们">联系我们</a></li>
+                                <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                           登录/注册<span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{% url 'page:view_login' %}">登录</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="{% url 'page:view_register' %}">注册</a></li>
+                                        </ul>
+                                 </li>
+								  <div class="clearfix"></div>
+								</ul>
+							</div>
+							<!-- script-for-menu -->
+								<script>
+									$("span.menu").click(function(){
+										$(".top-menu ul").slideToggle("slow" , function(){
+										});
+									});
+								</script>
+								<!-- script-for-menu -->
+							<div class="clearfix"> </div>
+					</div>
+				</div>
+			    <div class="clearfix"> </div>
+		</div>
+		<!----- //End-slider---->
+<!---start-slide-bottom--->
+			<div class="about-section">
+				 <div class="container">
+				     <div class="about-head">
+							<h3>磬苑幼儿园</h3>
+							<p>磬苑幼儿园情况简介</p>
+					 </div>
+				      	<div class="col-md-5 slide-about">
+									<div class="side">
+										 <div  id="top" class="callbacks_container">
+												<ul class="rslides" id="slider4">
+														<li>
+														<img src="{% static 'image/s1.jpg' %}" class="img-responsive" alt="" />
+														</li>
+														<li>
+														<img src="{% static  'image/s2.jpg' %}" class="img-responsive" alt="" />
+														</li>
+														<li>
+															<img src="{% static 'image/s1.jpg' %}" class="img-responsive" alt="" />
+														</li>
+													 </ul>
+												</div>
+											</div>
+								<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+							 <script>
+								// You can also use "$(window).load(function() {"
+								$(function () {
+								  // Slideshow 4
+								  $("#slider4").responsiveSlides({
+									auto: true,
+									pager:false,
+									nav: true,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+									  $('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+									  $('.events').append("<li>after event fired.</li>");
+									}
+								  });
+							
+								});
+							  </script>
+							<!----//End-slider-script---->
+						<div class="clearfix"> </div>
+					</div>
+					<div class="col-md-7 about-text">
+					    <p>磬苑幼儿园建于2017年6月，占地面积有3.25亩,房屋建筑面积1800多个平方，绿化面积占有200个平方，可同时容纳800名幼儿入园。现在园幼儿406名，分为学前、大中小10个班，园内共有29名教职工，其中具有幼师资格的专业教师10名，另外还配有11名保育员，勤杂工1名，炊事员2名，保安3名，驾驶员2名，是目前白土唯一一家规模最大的私立幼儿园。
+                        　　芳芳幼儿园领导班子富有朝气、师资队伍素质较高、保教质量堪称一流、享有很好的社会声誉。幼儿园为了加快教师队伍的建设，提出力争近年内教师95%达大专学历，实现教师队伍大专化。
+                        　　幼儿园的办园目标是：建设一所具管理科学、队伍精良、质量一流、设备先进、独具特色的示范性、开放性、现代化的幼儿园，力争跨入全省幼教先进行列。
+                          </p>
+                        <p>
+                            幼儿园园训： <br />
+                        　　微笑面对家长，精心呵护孩子，宽容对待同事善于挑战自我。认真开展工作，平和看待名利，勇于战胜困难，服务家长，服务社会，争取做到更好。
+                        　　<br />爱心承诺：<br />
+                        　　接待幼儿要热心，照顾幼儿要贴心，处理问题要细心，教育幼儿要耐心，组织活动要用心，上班时间要专心。教育不能选择适合教育的孩子，只能选择适合孩子的教育，受教育的机会是平等的。以关怀，接纳，尊重的态度与幼儿交往，耐心、倾听、努力理解幼儿的想法与感受，支持鼓励他们大胆探索与表达。面对家长，我们坚守真挚的承诺，面对孩子我们捧出真挚的爱心。
+                        </p>
+
+					</div>
+					<div class="clearfix"></div>
+				 </div>
+			</div>
+       <!---start-about-bottom--->
+		<div class="slide-bottom">
+			<div class="slide-bottom-grids">
+				 <div class="container">
+					 <div class="col-md-6 slide-bottom-grid">
+							<h3>招生信息</h3>
+							<p> 招生原则和范围：<br />
+	智力正常、身体健康的幼儿，不受地段和户口性质的限制均可报名
+                            <br />
+                               <a href="{% url 'page:view_admissions' %}"> 详情点击>>></a></p>
+
+					 </div>
+
+					 <div class="col-md-6 slide-bottom-grid">
+					       <h3>办学宗旨</h3>
+						   <p>一切为了孩子卓越的未来.<br />
+以孩子为中心，通过国际化、先进的教育理念和课程，尊重孩子个性，培养孩子的创造力、品格和多元文化意识，促进孩子全面发展，使每个孩子都有光明的未来。</p>
+					 </div>
+
+					   <div class="clearfix"></div>
+				 </div>
+			 </div>
+		</div>
+
+<!--/mid-bg-->
+    <div class="mid-bg">
+		<div class="container">
+			<div class="mid-section">
+				 <h3>即将开始的新生活!</h3>
+				 <h4>你准备好了吗 ?</h4>
+
+			</div>
+		</div>
+	</div>
+	<!--address-->
+	 <div style="background: #fff;width:100%;color: #333;padding:15px;text-align: center">
+             <h4>野蛮的教育为了不可靠的将来而牺牲现在，我们的教育关注当下，着眼未来。</h4>
+            </div>
+			<div class="footer">
+
+				<div class="container">
+
+					<div class="copy">
+		              <p>Copyright &copy; Zhu name All rights reserved.More Info about please click<a href="#" target="_blank" title="github">GitHub</a> - Collect from <a href="#" title="GitHUb" target="_blank">GitHUb</a></p>
+		            </div>
+					
+				</div>
+			</div>
+	<!--start-smoth-scrolling-->
+			<script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){		
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+								</script>
+							<!--start-smoth-scrolling-->
+						<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+</body>
+</html>

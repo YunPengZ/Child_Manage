@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Primary School Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+{% load staticfiles %}
+    <link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/top_tab.css' %}" rel="stylesheet" type="text/css" />
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"> </script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"> </script>
+<!--webfonts-->
+<link href='http://fonts.useso.com/css?family=Arvo:400,700,400italic|PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
+</head>
+<body>
+	<!----- start-header---->
+
+			<div id="home" class="header two">
+				<div class="top-header two">	
+						<div class="container">
+						<div class="logo">
+							<a  href="{% url 'page:index' %}" ><h1>磬苑<span>幼儿园</span></h1></a>
+						</div>
+					<!----start-top-nav---->
+							<div class="top-menu">
+							<span class="menu"> </span>
+								<ul class="cl-effect-16">
+								 <li><a class="active" href="{% url 'page:index' %}" data-hover="主页">主页</a></li>
+								<li><a href="{% url 'page:view_about' %}" data-hover="关于">关于</a></li>
+								<li><a href="{% url 'page:view_teacher' %}" data-hover="教师信息">教师信息</a></li>
+								<li><a href="{% url 'page:view_404' %}" data-hover="测试">测试</a></li>
+								<li><a href="{% url 'page:view_contact' %}" data-hover="联系我们">联系我们</a></li>
+                                <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                           登录/注册<span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu" style="float: none;">
+
+                                            <li><a href="{% url 'page:view_login' %}">登录</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="{% url 'page:view_register' %}">注册</a></li>
+                                        </ul>
+                                 </li>
+								  <div class="clearfix"></div>
+								</ul>
+							</div>
+							<!-- script-for-menu -->
+								<script>
+									$("span.menu").click(function(){
+										$(".top-menu ul").slideToggle("slow" , function(){
+										});
+									});
+								</script>
+								<!-- script-for-menu -->
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			    <div class="clearfix"> </div>
+		</div>
+		<!----- //End-slider---->
+	<!--/contact-->
+    <div class="member-section">
+			<div class="container">
+				<div class="member-head">
+						<h3>小组成员</h3>
+					   <p>2014级计算机科学与技术专业-软件工程实验</p>
+					   </div>
+			      <div class="members">
+					        <div class="col-md-4 member-grids">
+								<h5>组长-黄家彬</h5>
+								<p>每次实验报告的整理
+                                需求分析：系统流程图、状态转换图
+                            详细设计：PAD图（和韩健合作完成）
+                                </p>
+							</div>
+                            <div class="col-md-4 member-grids" style="visibility:hidden;" >
+								<h5>填充位</h5>
+								<p>每次实验报告的整理
+                                需求分析：系统流程图、状态转换图
+                            详细设计：PAD图（和韩健合作完成）</p>
+							</div>
+                            <div class="col-md-4 member-grids" style=" visibility:hidden">
+								<h5>填充位</h5>
+								<p>每次实验报告的整理
+                                需求分析：系统流程图、状态转换图
+                            详细设计：PAD图（和韩健合作完成）<br />编码部分： 网页前端界面的设计（与黄家彬合作完成）</p>
+							</div>
+							<div class="col-md-4 member-grids">
+								<h5>组员-韩健</h5>
+								<p>需求分析:E-R图<br />详细设计：PAD图（和黄家彬合作完成）<br />网页前端界面的设计（与黄家彬合作完成）</p>
+
+							</div>
+							<div class="col-md-4 member-grids">
+								<h5>组员-李功明</h5>
+								<p>可行性分析文档<br />
+                                总体设计文档<br />编码：与朱云鹏一起完成网页后台的实现</p>
+							</div>
+                            <div class="col-md-4 member-grids">
+								<h5>组员-朱云鹏</h5>
+								<p>需求分析：描述系统功能、定义数据字典<br/>编码：搭建网站架构<br />   实现网页的基本功能</p>
+							</div>
+							<div class="clearfix"> </div>
+					   </div>
+				  </div>
+			</div>
+		</div>
+	 <div class="contact">
+	 	<div class="container">
+					<div class="contact-head">
+							<h3>联系我们</h3>
+							<p>请通过以下方式联系我</p>
+					 </div>
+		<div class="contact-top">
+		     <div class="col-md-4 contact-text">
+				<div class="cont-grid">
+					<div class="con-icon">
+						<i class="mail"> </i>
+					</div>
+					<div class="con-text">
+						<h4>邮箱</h4>
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			     <div class="cont-grid">
+					<div class="con-icon">
+						<i class="net"> </i>
+					</div>
+					<div class="con-text">
+						<h4>或者是...
+                            <br />
+                            <strong>来这里!!!</strong>
+                        </h4>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			 </div>
+			 <div class="col-md-8 contact-form">
+                 <p>11414045@ahu.edu.cn </p>
+             </div>
+			  <div class="clearfix"></div>
+		</div>
+	</div>
+		<div class="map">
+            <iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d3392.0155805013123!2d117.18219831465959!3d31.77006098128773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35cb5ff21d7ed66d%3A0xf2edb274b5d8367c!2z5a6J5b695aSn5a2m5paw5qCh5Yy6!5e0!3m2!1szh-CN!2scn!4v1495506401209" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+	 <div style="background: #fff;width:100%;color: #333;padding:15px;text-align: center">
+             <h4>野蛮的教育为了不可靠的将来而牺牲现在，我们的教育关注当下，着眼未来。</h4>
+            </div>
+			<div class="footer">
+
+				<div class="container">
+
+					<div class="copy">
+		              <p>Copyright &copy; Zhu name All rights reserved.More Info about please click<a href="#" target="_blank" title="github">GitHub</a> - Collect from <a href="#" title="GitHUb" target="_blank">GitHUb</a></p>
+		            </div>
+					
+				</div>
+			</div>
+	<!--start-smoth-scrolling-->
+			<script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){		
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+								</script>
+							<!--start-smoth-scrolling-->
+						<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+</body>
+</html>

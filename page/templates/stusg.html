@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>{{ stu.stu_name }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Primary School Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+{% load  staticfiles %}
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{%  static 'css/bootstrap.css'%}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+<script src="{% static 'js/jquery.min.js'  %}"> </script>
+<!--webfonts-->
+ <link href='http://fonts.useso.com/css?family=Arvo:400,700,400italic|PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
+</head>
+<body>
+	<!--start-home-->
+		<!----- start-header---->
+			<div id="home" class="header two">
+					<div class="top-header two">
+						<div class="container">
+						<div class="logo">
+							  <a  href="{% url 'page:index' %}" ><h1>磬苑<span>幼儿园</span></h1></a>
+						</div>
+					<!----start-top-nav---->
+						<div class="top-menu">
+							<span class="menu"> </span>
+								<ul class="cl-effect-16">
+								 <li><a class="active" href="{% url 'page:index' %}" data-hover="主页">主页</a></li>
+								<li><a href="{% url 'page:view_about' %}" data-hover="关于">关于</a></li>
+								<li><a href="{% url 'page:view_teacher' %}" data-hover="教师信息">教师信息</a></li>
+								<li><a href="{% url 'page:view_404' %}" data-hover="测试">测试</a></li>
+								<li><a href="{% url 'page:view_contact' %}" data-hover="联系我们">联系我们</a></li>
+                                <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                           登录/注册<span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu" style="float: none;">
+
+                                            <li><a href="{% url 'page:view_login' %}">登录</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="{% url 'page:view_register' %}">注册</a></li>
+                                        </ul>
+                                 </li>
+								  <div class="clearfix"></div>
+								</ul>
+							</div>
+							<!-- script-for-menu -->
+								<script>
+									$("span.menu").click(function(){
+										$(".top-menu ul").slideToggle("slow" , function(){
+										});
+									});
+								</script>
+								<!-- script-for-menu -->
+							<div class="clearfix"> </div>
+					</div>
+				</div>
+			    <div class="clearfix"> </div>
+		</div>
+		<!----- //End-slider---->
+ <script src="{% static 'js/easyResponsiveTabs.js' %}" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion
+				width: 'auto', //auto or any width like 600px
+				fit: true   // 100% fit in a container
+			});
+		});
+	   </script>
+<!-- //activities -->
+		<div class="member-section">
+			<div class="container">
+
+				<div class="member-head">
+						<h3>学生信息</h3>
+					   <p>学号姓名</p>
+					   </div>
+			      <div class="members">
+                        <div class="col-md-4 member-grids">
+                            <h5><a href="{% url 'page:view_stu_single' stu.stu_id %}" style="color:#fff">{{ stu.stu_name }}</a></h5>
+                            <p>
+                                年龄：{{ stu.stu_age }}<br />
+                                性别：{{ stu.stu_sex }}<br />
+                                地址：{{ stu.stu_addr }}<br />
+                                学生表现：{{ stu.stu_perfer }}<br />
+                                学生班级：
+                                {% for cla_item in stu_cla %}
+                                    <a href="{% url 'page:view_classroom_single' cla_item.cla_id %}">{{ cla_item.cla_name }}</a><br />
+                                {% endfor %}
+                                学生家长：
+                                {% for par_item in stu_par %}
+                                    <a href="{% url 'page:view_parent' par_item.par_id %}">{{ par_item.par_name }}</a><br />
+                                {% endfor %}
+
+                            </p>
+                        </div>
+
+                        <div class="clearfix"> </div>
+					   </div>
+
+				  </div>
+			</div>
+		</div>
+<!--/mid-bg-->
+	<div class="mid-bg">
+		<div class="container">
+			<div class="mid-section">
+				 <h3>即将开始的新生活!</h3>
+				 <h4>你准备好了吗 ?</h4>
+
+			</div>
+		</div>
+	</div>
+	<!--address-->
+	<!--//address-->
+		<!----footer--->
+			<div style="background: #fff;width:100%;color: #333;padding:15px;text-align: center">
+             <h4>野蛮的教育为了不可靠的将来而牺牲现在，我们的教育关注当下，着眼未来。</h4>
+            </div>
+			<div class="footer">
+
+				<div class="container">
+
+					<div class="copy">
+		              <p>Copyright &copy; Zhu name All rights reserved.More Info about please click<a href="#" target="_blank" title="github">GitHub</a> - Collect from <a href="#" title="GitHUb" target="_blank">GitHUb</a></p>
+		            </div>
+
+				</div>
+			</div>
+	<!--start-smoth-scrolling-->
+			<script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+								</script>
+							<!--start-smoth-scrolling-->
+						<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear'
+								 		};
+										*/
+
+										$().UItoTop({ easingType: 'easeOutQuart' });
+
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+</body>
+</html>

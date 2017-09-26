@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Primary School Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+{% load staticfiles %}
+    <link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"> </script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--webfonts-->
+<link href='http://fonts.useso.com/css?family=Arvo:400,700,400italic|PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
+</head>
+<body>
+	<!----- start-header---->
+			<div id="home" class="header two">
+				<div class="top-header two">
+						<div class="container">
+						<div class="logo">
+							  <a  href="{% url 'page:index' %}" ><h1>磬苑<span>幼儿园</span></h1></a>
+						</div>
+					<!----start-top-nav---->
+							<div class="top-menu">
+							<span class="menu"> </span>
+								<ul class="c    l-effect-16">
+								 <li><a class="active" href="{% url 'page:index' %}" data-hover="主页">主页</a></li>
+								<li><a href="{% url 'page:view_about' %}" data-hover="关于">关于</a></li>
+								<li><a href="{% url 'page:view_teacher' %}" data-hover="教师信息">教师信息</a></li>
+								<li><a href="{% url 'page:view_404' %}" data-hover="测试">测试</a></li>
+								<li><a href="{% url 'page:view_contact' %}" data-hover="联系我们">联系我们</a></li>
+								  <div class="clearfix"></div>
+								</ul>
+							</div>
+							<!-- script-for-menu -->
+								<script>
+									$("span.menu").click(function(){
+									    //alert(' sss')
+										$(".top-menu ul").slideToggle("slow" , function(){
+										});
+									});
+								</script>
+								<!-- script-for-menu -->
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			    <div class="clearfix"> </div>
+		</div>
+    {% if state == 'par' %}
+
+    <div class="member-section">
+			<div class="container">
+				<div class="member-head">
+						<h3>孩子信息</h3>
+					   <p>基本信息</p>
+					   </div>
+			      <div class="members">
+                      {% for student in user.stu_par_set.all %}
+					   <div class="col-md-4 member-grids">
+                           <h5><a href="{% url 'page:view_stu_single' student.stu_id %}" style="color:#fff ">{{ student.stu_name }}</a></h5>
+								<p>
+                                    性别：{{ student.stu_sex }}
+                                    <br />
+                                    年龄：{{ student.stu_age }}
+                                    <br />
+                                    家庭住址：{{ student.stu_addr }}
+                                     <br />
+                                    学生表现：{{ student.stu_perfer }}
+                                </p>
+							</div>
+                      {% endfor %}
+							<div class="clearfix"> </div>
+					   </div>
+
+				  </div>
+			</div>
+		</div>
+
+        <ul class="nav nav-tabs">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                   接孩子放学<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    {% for student in user.stu_par_set.all %}
+                     <li><a href="{% url 'page:pick_up' student.stu_id user.par_id %}">{{ student.stu_name }}</a></li>
+                    <li class="divider"></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                   送孩子上学<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    {% for student in user.stu_par_set.all %}
+                     <li><a href="{% url 'page:take_to' student.stu_id user.par_id%}">{{ student.stu_name }}</a></li>
+                    <li class="divider"></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+ {% elif state == 'tea' %}
+        <div class="member-section">
+			<div class="container">
+				<div class="member-head">
+						<h3> 本班接送孩子情况</h3>
+					   <p>2017年最新老师名单</p>
+                </div>
+			      {% if reco_list %}
+         <ul class="list-group">
+
+
+            {% for reco in reco_list%}
+            {% if reco.deliver_state == False %}
+                 <li class="list-group-item">
+                    家长 {{ reco.deliver_par }}    {{ reco.deliver_choice }}   孩子 {{ reco.deliver_stu }}
+                </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+				  </div>
+			</div>
+		</div>
+
+ {% endif %}
+        <!--上方是孩子信息，和接送功能-->
+		<!----- //End-slider---->
+    <script type="text/javascript">
+        function edit_page() {
+            var value = $('input[type="submit"]')
+            if(value=='提交')return ;
+            var inputs = $('input')
+            inputs.each(function () {
+                $(this).attr('disabled',false)
+            })
+            $('input[type="button"]').attr("type","hidden")
+            $('input[name="submit"]').attr("type","submit")
+        }
+
+    </script>
+	<!--/contact-->
+	 <div class="contact">
+	 	<div class="container">
+            <div class="contact-head">
+            <h3>个人信息</h3>
+            <p>基本信息</p>
+            </div>
+		<div class="contact-top">
+		     <div class="col-md-4 contact-text">
+				<div class="cont-grid">
+					<div class="con-icon">
+						<i class="mail"> </i>
+					</div>
+					<div class="con-text">
+						<h4>昵称</h4>
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			     <div class="cont-grid">
+					<div class="con-icon">
+						<i class="net"> </i>
+					</div>
+					<div class="con-text">
+						<h4>真实姓名
+                        </h4>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+                  <div class="cont-grid">
+					<div class="con-icon">
+						<i class="net"> </i>
+					</div>
+					<div class="con-text">
+						<h4>性别
+                        </h4>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+                  <div class="cont-grid">
+					<div class="con-icon">
+						<i class="net"> </i>
+					</div>
+					<div class="con-text">
+						<h4>年龄
+                        </h4>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+                  <div class="cont-grid">
+					<div class="con-icon">
+						<i class="net"> </i>
+					</div>
+					<div class="con-text">
+						<h4>联系方式
+                        </h4>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			 </div>
+			 <div class="col-md-8 contact-form">
+
+                 {% if state == "tea" %}
+                  <form action="{% url 'page:update_info' %}" method="post">
+                   {% csrf_token %}
+                    <input type="hidden" name = "user_flag" value="{{ state }}">
+                      <input type="hidden" name = "user_id" value="{{ user.tea_id }}">
+                     <input type="text" name="user_nickname" value="{{ user.tea_nickname }}" disabled="true">
+                      <input type="text" name="user_name" value="{{ user.tea_name }}" disabled="true">
+                      <br/>
+                      {% if user.tea_sex == 'Male' %}
+                     <input type="radio" name="user_sex" value="Male" disabled="true" checked >Male
+                     <input type="radio" name="user_sex" value="FeMale" disabled="true">FeMale
+                      {% else %}
+                      <input type="radio" name="user_sex" value="Male" disabled="true">Male
+                     <input type="radio" name="user_sex" value="FeMale" disabled="true" checked>FeMale
+                      {% endif %}
+                      <br/>
+                     <br />
+                     <input type="text" name="user_age" value="{{ user.tea_age }}" disabled="true">
+                     <input type="text" name="user_tel" value="{{ user.tea_tel }}" disabled="true">
+                     <br />
+                      <input type="button" value="修改资料" onclick="edit_page();"/>
+                        <input type="hidden" name="submit" value="提交" />
+                 </form>
+                  {% elif state == "par" %}
+                        <form action="{% url 'page:update_info' %}" method="post">
+                        {% csrf_token %}
+                         <input type="hidden" name = "user_flag" value="{{ state }}">
+                         <input type="hidden" name = "user_id" value="{{ user.par_id }}">
+                         <input type="text" name="user_nickname" value="{{ user.par_nickname }}" disabled="true">
+                          <input type="text" name="user_name" value="{{ user.par_name }}" disabled="true">
+                          <br/>
+                          {% if user.par_sex == 'Male' %}
+                         <input type="radio" name="user_sex" value="Male" disabled="true" checked>Male
+                         <input type="radio" name="user_sex" value="FeMale" disabled="true">FeMale
+                          {% else %}
+                          <input type="radio" name="user_sex" value="Male" disabled="true">Male
+                         <input type="radio" name="user_sex" value="FeMale" disabled="true" checked>FeMale
+                          {% endif %}
+                          <br/>
+                         <br />
+                         <input type="text" name="user_age" value="{{ user.par_age }}" disabled="true">
+                         <input type="text" name="user_tel" value="{{ user.par_tel }}" disabled="true">
+                         <br />
+                         <input type="button" value="修改资料" onclick="edit_page();"/>
+                        <input type="hidden" name="submit" value="提交" />
+                     </form>
+                 {% else %}
+                    <!--error-->
+                 {% endif %}
+             </div>
+			  <div class="clearfix"></div>
+		</div>
+	</div>
+		<!----footer--->
+			<div class="footer">
+				<div class="container">
+					<div class="copy">
+		              <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+		            </div>
+
+				</div>
+			</div>
+	<!--start-smoth-scrolling-->
+			<script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+								</script>
+							<!--start-smoth-scrolling-->
+						<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear'
+								 		};
+										*/
+
+										$().UItoTop({ easingType: 'easeOutQuart' });
+
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+</body>
+</html>

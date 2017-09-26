@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Primary School Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+{% load staticfiles %}
+    <link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/top_tab.css' %}" rel="stylesheet" type="text/css" />
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"> </script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"> </script>
+<!--webfonts-->
+<link href='http://fonts.useso.com/css?family=Arvo:400,700,400italic|PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
+</head>
+<body>
+	<!--start-home-->
+	<!----- start-header---->
+			<div id="home" class="header two">
+					<div class="top-header two">
+						<div class="container">
+						<div class="logo">
+							<a  href="{% url 'page:index' %}" ><h1>磬苑<span>幼儿园</span></h1></a>
+						</div>
+					<div class="top-menu">
+							<span class="menu"> </span>
+								<ul class="cl-effect-16">
+								 <li><a class="active" href="{% url 'page:index' %}" data-hover="主页">主页</a></li>
+								<li><a href="{% url 'page:view_about' %}" data-hover="关于">关于</a></li>
+								<li><a href="{% url 'page:view_teacher' %}" data-hover="教师信息">教师信息</a></li>
+								<li><a href="{% url 'page:view_404' %}" data-hover="测试">测试</a></li>
+								<li><a href="{% url 'page:view_contact' %}" data-hover="联系我们">联系我们</a></li>
+                                <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                           登录/注册<span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu" style="float: none;">
+
+                                            <li><a href="{% url 'page:view_login' %}">登录</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="{% url 'page:view_register' %}">注册</a></li>
+                                        </ul>
+                                 </li>
+								  <div class="clearfix"></div>
+								</ul>
+							</div>
+							<!-- script-for-menu -->
+								<script>
+									$("span.menu").click(function(){
+										$(".top-menu ul").slideToggle("slow" , function(){
+										});
+									});
+								</script>
+								<!-- script-for-menu -->
+							<div class="clearfix"> </div>
+					</div>
+				</div>
+			    <div class="clearfix"> </div>
+		</div>
+		<!----- //End-slider---->
+<!---start-slide-bottom--->
+			<div class="about-section">
+				 <div class="container">
+				     <div class="about-head">
+							<h3>招生信息</h3>
+							<p>招生条例说明</p>
+					 </div>
+
+					<div class="col-md- 7 about-text">
+                        <h3>招生原则和范围：</h3>
+	                        <p>智力正常、身体健康的幼儿，不受地段和户口性质的限制均可报名</p>
+                            <br />
+                        <h3>招生对象：</h3>
+                             <p>小班：3-4岁的幼儿<br />
+                            中班：4-5岁的幼儿<br />
+                            大班：5-7岁的幼儿</p>
+                                                <br />
+                        <h3>学费：</h3>
+                             <p>根据安徽省物价局、安徽省财政厅有关文件规定，我校学费标准如下：保育费350/学期，杂费50/学期，大班书本费80元/学期，中班50元/学期，小班40元/学期，生活费100元/月</p>
+                        <br />
+                        <h3>招生办公室联系方式：</h3>
+                        <h5>电话：</h5><p>0551-66666666，88888888</p>
+                        <h5>地址：</h5><p>安徽省合肥市九龙路222号（230601）</p>
+                        <h5>网址：</h5><p><a href="http://119.29.9.154:8000/index/index">点击这里>>></a></p>
+					</div>
+					<div class="clearfix"></div>
+				 </div>
+			</div>
+
+<!--/mid-bg-->
+    <div class="mid-bg">
+		<div class="container">
+			<div class="mid-section">
+				 <h3>即将开始的新生活!</h3>
+				 <h4>你准备好了吗 ?</h4>
+
+			</div>
+		</div>
+	</div>
+	<!--address-->
+	 <div style="background: #fff;width:100%;color: #333;padding:15px;text-align: center">
+             <h4>野蛮的教育为了不可靠的将来而牺牲现在，我们的教育关注当下，着眼未来。</h4>
+            </div>
+			<div class="footer">
+
+				<div class="container">
+
+					<div class="copy">
+		              <p>Copyright &copy; Zhu name All rights reserved.More Info about please click<a href="#" target="_blank" title="github">GitHub</a> - Collect from <a href="#" title="GitHUb" target="_blank">GitHUb</a></p>
+		            </div>
+
+				</div>
+			</div>
+	<!--start-smoth-scrolling-->
+			<script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+								</script>
+							<!--start-smoth-scrolling-->
+						<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear'
+								 		};
+										*/
+
+										$().UItoTop({ easingType: 'easeOutQuart' });
+
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+</body>
+</html>
